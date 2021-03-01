@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WebSite with background video</title>
+</head>
+<body>
+    <div class="hero">
+        <video autoplay loop muted plays-inline id="backVideo">
+            <source src="images/video.mp4" type="video/mp4">
+        </video>
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+        </div><!--logo-->
+        <div class="sidebar">
+            <div class="text-box">
+                <h1>GOLDEN RESORT</h1>
+                <h4>LUXURY LIVING</h4>
+                <div class="line"></div><!--line-->
+            </div><!--text-box-->
+        </div><!--sidebar-->
+        <div class="content">
+            <h1>Maldives</h1>
+            <p>Very nice appartments in the heart of  maldives</p>
+            <div class="btn" id="playBtn">
+                <img src="images/play.png" id="icon"> Whatch Video
+            </div><!--btn-->
+        </div><!--content-->
+    </div><!--hero-->
+
+    <script>
+        var backVideo = document.getElementById('backVideo');
+        var playBtn = document.getElementById('playBtn');
+        var icon = document.getElementById('icon');
+
+        playBtn.onclick = function(){
+            backVideo.style.display = "block";
+
+            if(backVideo.paused){
+            backVideo.play();
+            icon.src = "images/pause.png"
+        }
+            else{
+            backVideo.pause();
+            icon.src = "images/play.png"
+        }
+        }
+
+    </script>
+
+</body>
+</html>
